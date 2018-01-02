@@ -56,17 +56,26 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="minimumTrackTintColor" red="0.94728130099999996" green="0.14038210709999999" blue="0.19450705109999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="thumbTintColor" red="0.94728130099999996" green="0.14038210709999999" blue="0.19450705109999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <action selector="changeRed:" destination="BV1-FR-VrT" eventType="valueChanged" id="3bI-Kj-WwI"/>
+                                </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="BWc-oR-TdO">
                                 <rect key="frame" x="136" y="618" width="118" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="minimumTrackTintColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="thumbTintColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="changeGreen:" destination="BV1-FR-VrT" eventType="valueChanged" id="ktL-t1-HcO"/>
+                                </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="V3u-MR-BdN">
                                 <rect key="frame" x="258" y="618" width="118" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="thumbTintColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="changeBlue:" destination="BV1-FR-VrT" eventType="valueChanged" id="aKm-Ff-RVr"/>
+                                </connections>
                             </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -86,6 +95,9 @@
                         <viewLayoutGuide key="safeArea" id="b0f-aJ-ggc"/>
                     </view>
                     <connections>
+                        <outlet property="colorChangerBlue" destination="V3u-MR-BdN" id="ilH-EX-FVs"/>
+                        <outlet property="colorChangerGreen" destination="BWc-oR-TdO" id="eEg-Wz-5ax"/>
+                        <outlet property="colorChangerRed" destination="eRE-G0-cZ0" id="Nau-l9-rex"/>
                         <outlet property="drawButton" destination="pPJ-s3-Bt4" id="Zjh-dI-K2J"/>
                         <outlet property="restartOutlit" destination="R92-ic-ryr" id="4hM-5g-yWx"/>
                         <outlet property="sceneView" destination="DSs-mq-6OJ" id="6YE-g7-7sG"/>

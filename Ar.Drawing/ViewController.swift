@@ -16,10 +16,17 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     @IBOutlet weak var drawButton: UIButton!
     @IBOutlet weak var restartOutlit: UIButton!
     
+    @IBOutlet weak var colorChangerRed: UISlider!
+    @IBOutlet weak var colorChangerGreen: UISlider!
+    @IBOutlet weak var colorChangerBlue: UISlider!
     
     var showHiddenRestart = false
     var mainNode = SCNNode()
-    var currentColor = UIColor.black
+//    var currentColor = UIColor.blue
+    //    the Color Vars
+    var redColor: Float = 0
+    var blueColor: Float = 0
+    var greenColor: Float = 0
     
     
     override func viewDidLoad() {
@@ -42,7 +49,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     func renderer(_ renderer: SCNSceneRenderer, willRenderScene scene: SCNScene, atTime time: TimeInterval) {
         
         //  get the location of the Camera
-        drawButton.backgroundColor = currentColor
+//        drawButton.backgroundColor = currentColor
         guard let cameraPoint = sceneView.pointOfView else {
             
             return
@@ -57,7 +64,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             if self.drawButton.isTouchInside {
                 let sphere = SCNSphere(radius: 0.02)
                 let material = SCNMaterial()
-                material.diffuse.contents = self.currentColor
+                material.diffuse.contents = self.drawButton.backgroundColor
                 sphere.materials = [material]
                 
                 if self.showHiddenRestart == false{
@@ -71,7 +78,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
                 
             }
         }
-
+        
+        
    
     }
     
@@ -98,16 +106,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Release any cached data, images, etc that aren't in use.
     }
 
-    // MARK: - ARSCNViewDelegate
-    
-/*
-    // Override to create and configure nodes for anchors added to the view's session.
-    func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
-        let node = SCNNode()
-     
-        return node
-    }
-*/
+
     
     func session(_ session: ARSession, didFailWithError error: Error) {
         // Present an error message to the user
@@ -123,6 +122,36 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Reset tracking and/or remove existing anchors if consistent tracking is required
         
     }
+    
+    
+    @IBAction func changeRed(_ sender: Any) {
+        changeColor()
+    }
+    @IBAction func changeGreen(_ sender: Any) {
+        changeColor()
+    }
+    
+    @IBAction func changeBlue(_ sender: Any) {
+        changeColor()
+    }
+    
+    
+    
+    
+    func changeDisplayColor(){
+        drawButton.backgroundColor = UIColor(red: CGFloat(redColor), green: CGFloat(greenColor), blue: CGFloat(blueColor), alpha: 1.0)
+    }
+    
+    
+    func changeColor() {
+        redColor  =  colorChangerRed.value
+        blueColor =  colorChangerGreen.value
+        greenColor =  colorChangerBlue.value
+        changeDisplayColor()
+    }
+    
+    
+    
     func showButt()  {
         showHiddenRestart = true
         restartOutlit.isHidden = false

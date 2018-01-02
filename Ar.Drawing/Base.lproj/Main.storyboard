@@ -23,7 +23,6 @@
                             </arscnView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pPJ-s3-Bt4">
                                 <rect key="frame" x="154.5" y="543" width="66" height="66"/>
-                                <color key="backgroundColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="66" id="jNu-hr-M0i"/>
                                     <constraint firstAttribute="height" constant="66" id="mly-pi-UU1"/>

@@ -27,7 +27,10 @@
                                     <constraint firstAttribute="width" constant="66" id="jNu-hr-M0i"/>
                                     <constraint firstAttribute="height" constant="66" id="mly-pi-UU1"/>
                                 </constraints>
-                                <state key="normal" title="DRAW"/>
+                                <state key="normal" title="DRAW">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleShadowColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="17"/>
@@ -51,46 +54,63 @@
                                     <action selector="restartButt:" destination="BV1-FR-VrT" eventType="touchUpInside" id="i04-2m-Gkz"/>
                                 </connections>
                             </button>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="eRE-G0-cZ0">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="eRE-G0-cZ0">
                                 <rect key="frame" x="14" y="618" width="118" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="4tV-C5-hrD"/>
+                                    <constraint firstAttribute="width" constant="114" id="VLn-bz-9et"/>
+                                </constraints>
                                 <color key="minimumTrackTintColor" red="0.94728130099999996" green="0.14038210709999999" blue="0.19450705109999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="thumbTintColor" red="0.94728130099999996" green="0.14038210709999999" blue="0.19450705109999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
                                     <action selector="changeRed:" destination="BV1-FR-VrT" eventType="valueChanged" id="3bI-Kj-WwI"/>
                                 </connections>
                             </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="BWc-oR-TdO">
-                                <rect key="frame" x="136" y="618" width="118" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="V3u-MR-BdN">
+                                <rect key="frame" x="251" y="618" width="118" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="6xL-Ry-3w9"/>
+                                    <constraint firstAttribute="width" constant="114" id="YJD-Ic-vYS"/>
+                                </constraints>
                                 <color key="minimumTrackTintColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="thumbTintColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
-                                    <action selector="changeGreen:" destination="BV1-FR-VrT" eventType="valueChanged" id="ktL-t1-HcO"/>
+                                    <action selector="changeBlue:" destination="BV1-FR-VrT" eventType="valueChanged" id="aKm-Ff-RVr"/>
                                 </connections>
                             </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="V3u-MR-BdN">
-                                <rect key="frame" x="258" y="618" width="118" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="BWc-oR-TdO">
+                                <rect key="frame" x="133" y="618" width="118" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="114" id="JNl-Ji-j0n"/>
+                                    <constraint firstAttribute="height" constant="29" id="iqQ-hN-ITh"/>
+                                </constraints>
+                                <color key="minimumTrackTintColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="thumbTintColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
-                                    <action selector="changeBlue:" destination="BV1-FR-VrT" eventType="valueChanged" id="aKm-Ff-RVr"/>
+                                    <action selector="changeGreen:" destination="BV1-FR-VrT" eventType="valueChanged" id="ktL-t1-HcO"/>
                                 </connections>
                             </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="b0f-aJ-ggc" firstAttribute="trailing" secondItem="DSs-mq-6OJ" secondAttribute="trailing" id="0cb-aR-uUy"/>
+                            <constraint firstItem="b0f-aJ-ggc" firstAttribute="trailing" secondItem="V3u-MR-BdN" secondAttribute="trailing" constant="8" id="14K-xS-0QZ"/>
                             <constraint firstItem="iPT-tj-rpZ" firstAttribute="centerX" secondItem="Qw2-Eo-xzb" secondAttribute="centerX" id="1t0-4c-jo7"/>
                             <constraint firstItem="b0f-aJ-ggc" firstAttribute="bottom" secondItem="pPJ-s3-Bt4" secondAttribute="bottom" constant="58" id="2kr-f9-lhh"/>
+                            <constraint firstItem="b0f-aJ-ggc" firstAttribute="bottom" secondItem="eRE-G0-cZ0" secondAttribute="bottom" constant="20" id="CtF-l8-Lgd"/>
                             <constraint firstItem="b0f-aJ-ggc" firstAttribute="trailing" secondItem="R92-ic-ryr" secondAttribute="trailing" constant="16" id="NGn-oO-Bw5"/>
                             <constraint firstItem="DSs-mq-6OJ" firstAttribute="leading" secondItem="b0f-aJ-ggc" secondAttribute="leading" id="Paz-qT-hwd"/>
                             <constraint firstItem="pPJ-s3-Bt4" firstAttribute="centerX" secondItem="Qw2-Eo-xzb" secondAttribute="centerX" id="TW0-5f-E8e"/>
+                            <constraint firstItem="eRE-G0-cZ0" firstAttribute="leading" secondItem="b0f-aJ-ggc" secondAttribute="leading" constant="16" id="VPs-kP-HMu"/>
                             <constraint firstItem="iPT-tj-rpZ" firstAttribute="centerY" secondItem="Qw2-Eo-xzb" secondAttribute="centerY" id="Zyu-8W-Oei"/>
                             <constraint firstItem="b0f-aJ-ggc" firstAttribute="bottom" secondItem="DSs-mq-6OJ" secondAttribute="bottom" id="aNL-Wc-OQI"/>
+                            <constraint firstItem="V3u-MR-BdN" firstAttribute="leading" secondItem="BWc-oR-TdO" secondAttribute="trailing" constant="4" id="b3M-8L-2uy"/>
+                            <constraint firstItem="b0f-aJ-ggc" firstAttribute="bottom" secondItem="BWc-oR-TdO" secondAttribute="bottom" constant="20" id="df8-YP-K0g"/>
                             <constraint firstItem="DSs-mq-6OJ" firstAttribute="top" secondItem="b0f-aJ-ggc" secondAttribute="top" id="h6o-Aq-6Jc"/>
+                            <constraint firstItem="b0f-aJ-ggc" firstAttribute="bottom" secondItem="V3u-MR-BdN" secondAttribute="bottom" constant="20" id="iaS-72-rH2"/>
                             <constraint firstItem="pPJ-s3-Bt4" firstAttribute="leading" secondItem="b0f-aJ-ggc" secondAttribute="leading" constant="154.5" id="ily-L6-ABi"/>
                             <constraint firstItem="R92-ic-ryr" firstAttribute="top" secondItem="b0f-aJ-ggc" secondAttribute="top" constant="21" id="sxQ-RS-ogW"/>
+                            <constraint firstItem="BWc-oR-TdO" firstAttribute="leading" secondItem="eRE-G0-cZ0" secondAttribute="trailing" constant="5" id="vFI-VY-ch1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="b0f-aJ-ggc"/>
                     </view>

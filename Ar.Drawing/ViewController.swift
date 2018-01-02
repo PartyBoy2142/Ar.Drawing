@@ -11,7 +11,7 @@ import SceneKit
 import ARKit
 
 class ViewController: UIViewController, ARSCNViewDelegate {
-
+    
     @IBOutlet var sceneView: ARSCNView!
     @IBOutlet weak var drawButton: UIButton!
     @IBOutlet weak var restartOutlit: UIButton!
@@ -22,7 +22,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     
     var showHiddenRestart = false
     var mainNode = SCNNode()
-//    var currentColor = UIColor.blue
+    //    var currentColor = UIColor.blue
     //    the Color Vars
     var redColor: Float = 0
     var blueColor: Float = 0
@@ -49,7 +49,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     func renderer(_ renderer: SCNSceneRenderer, willRenderScene scene: SCNScene, atTime time: TimeInterval) {
         
         //  get the location of the Camera
-//        drawButton.backgroundColor = currentColor
+        //        drawButton.backgroundColor = currentColor
         guard let cameraPoint = sceneView.pointOfView else {
             
             return
@@ -62,7 +62,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         let cameraPosition = SCNVector3Make(cameralocation.x + cameraOrientation.x, cameralocation.y + cameraOrientation.y, cameralocation.z + cameraOrientation.z)
         DispatchQueue.main.async {
             if self.drawButton.isTouchInside {
-                let sphere = SCNSphere(radius: 0.02)
+                let sphere = SCNSphere(radius: 0.008)
                 let material = SCNMaterial()
                 material.diffuse.contents = self.drawButton.backgroundColor
                 sphere.materials = [material]
@@ -80,7 +80,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         }
         
         
-   
+        
     }
     
     
@@ -89,7 +89,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         // Create a session configuration
         let configuration = ARWorldTrackingConfiguration()
-
+        
         // Run the view's session
         sceneView.session.run(configuration)
     }
@@ -105,8 +105,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         super.didReceiveMemoryWarning()
         // Release any cached data, images, etc that aren't in use.
     }
-
-
+    
+    
     
     func session(_ session: ARSession, didFailWithError error: Error) {
         // Present an error message to the user

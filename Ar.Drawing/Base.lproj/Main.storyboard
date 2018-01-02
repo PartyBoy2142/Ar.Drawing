@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tXr-a1-R10">
+            <objects>
+                <viewController id="BV1-FR-VrT" customClass="ViewController" customModule="Ar_Drawing" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Qw2-Eo-xzb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DSs-mq-6OJ">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </arscnView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pPJ-s3-Bt4">
+                                <rect key="frame" x="154.5" y="543" width="66" height="66"/>
+                                <color key="backgroundColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="66" id="jNu-hr-M0i"/>
+                                    <constraint firstAttribute="height" constant="66" id="mly-pi-UU1"/>
+                                </constraints>
+                                <state key="normal" title="DRAW"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="17"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="x" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iPT-tj-rpZ">
+                                <rect key="frame" x="183" y="323.5" width="9" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R92-ic-ryr">
+                                <rect key="frame" x="329" y="41" width="30" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="X">
+                                    <color key="titleColor" red="0.94728130099999996" green="0.14038210709999999" blue="0.19450705109999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="restartButt:" destination="BV1-FR-VrT" eventType="touchUpInside" id="i04-2m-Gkz"/>
+                                </connections>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="eRE-G0-cZ0">
+                                <rect key="frame" x="14" y="618" width="118" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="minimumTrackTintColor" red="0.94728130099999996" green="0.14038210709999999" blue="0.19450705109999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="thumbTintColor" red="0.94728130099999996" green="0.14038210709999999" blue="0.19450705109999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="BWc-oR-TdO">
+                                <rect key="frame" x="136" y="618" width="118" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="minimumTrackTintColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="thumbTintColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="V3u-MR-BdN">
+                                <rect key="frame" x="258" y="618" width="118" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="thumbTintColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </slider>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="b0f-aJ-ggc" firstAttribute="trailing" secondItem="DSs-mq-6OJ" secondAttribute="trailing" id="0cb-aR-uUy"/>
+                            <constraint firstItem="iPT-tj-rpZ" firstAttribute="centerX" secondItem="Qw2-Eo-xzb" secondAttribute="centerX" id="1t0-4c-jo7"/>
+                            <constraint firstItem="b0f-aJ-ggc" firstAttribute="bottom" secondItem="pPJ-s3-Bt4" secondAttribute="bottom" constant="58" id="2kr-f9-lhh"/>
+                            <constraint firstItem="b0f-aJ-ggc" firstAttribute="trailing" secondItem="R92-ic-ryr" secondAttribute="trailing" constant="16" id="NGn-oO-Bw5"/>
+                            <constraint firstItem="DSs-mq-6OJ" firstAttribute="leading" secondItem="b0f-aJ-ggc" secondAttribute="leading" id="Paz-qT-hwd"/>
+                            <constraint firstItem="pPJ-s3-Bt4" firstAttribute="centerX" secondItem="Qw2-Eo-xzb" secondAttribute="centerX" id="TW0-5f-E8e"/>
+                            <constraint firstItem="iPT-tj-rpZ" firstAttribute="centerY" secondItem="Qw2-Eo-xzb" secondAttribute="centerY" id="Zyu-8W-Oei"/>
+                            <constraint firstItem="b0f-aJ-ggc" firstAttribute="bottom" secondItem="DSs-mq-6OJ" secondAttribute="bottom" id="aNL-Wc-OQI"/>
+                            <constraint firstItem="DSs-mq-6OJ" firstAttribute="top" secondItem="b0f-aJ-ggc" secondAttribute="top" id="h6o-Aq-6Jc"/>
+                            <constraint firstItem="pPJ-s3-Bt4" firstAttribute="leading" secondItem="b0f-aJ-ggc" secondAttribute="leading" constant="154.5" id="ily-L6-ABi"/>
+                            <constraint firstItem="R92-ic-ryr" firstAttribute="top" secondItem="b0f-aJ-ggc" secondAttribute="top" constant="21" id="sxQ-RS-ogW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="b0f-aJ-ggc"/>
+                    </view>
+                    <connections>
+                        <outlet property="drawButton" destination="pPJ-s3-Bt4" id="Zjh-dI-K2J"/>
+                        <outlet property="restartOutlit" destination="R92-ic-ryr" id="4hM-5g-yWx"/>
+                        <outlet property="sceneView" destination="DSs-mq-6OJ" id="6YE-g7-7sG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+</document>

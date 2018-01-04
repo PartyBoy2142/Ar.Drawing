@@ -20,13 +20,21 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     @IBOutlet weak var colorChangerGreen: UISlider!
     @IBOutlet weak var colorChangerBlue: UISlider!
     
+    @IBOutlet weak var brushSizeOutlet: UISlider!
+    @IBOutlet weak var brushSize: UILabel!
+    
+    @IBOutlet weak var messageToUser: UILabel!
+    
     var showHiddenRestart = false
+    var hideMessageToUser = true
     var mainNode = SCNNode()
     //    var currentColor = UIColor.blue
     //    the Color Vars
-    var redColor: Float = 0
-    var blueColor: Float = 0
-    var greenColor: Float = 0
+    var redColor: Float = 7
+    var blueColor: Float = 2
+    var greenColor: Float = 9
+    var sliderValue: Float = 0.008
+    var brushSizeNow: Float = 0.008
     
     
     override func viewDidLoad() {
@@ -62,7 +70,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         let cameraPosition = SCNVector3Make(cameralocation.x + cameraOrientation.x, cameralocation.y + cameraOrientation.y, cameralocation.z + cameraOrientation.z)
         DispatchQueue.main.async {
             if self.drawButton.isTouchInside {
-                let sphere = SCNSphere(radius: 0.008)
+                let sphere = SCNSphere(radius: CGFloat(self.brushSizeNow))
                 let material = SCNMaterial()
                 material.diffuse.contents = self.drawButton.backgroundColor
                 sphere.materials = [material]
@@ -135,6 +143,14 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         changeColor()
     }
     
+    @IBAction func brushCahnger(_ sender: UISlider) {
+        brushSize.text = "\(sender.value)"
+        changeBruchSize()
+    }
+    
+    func changeBruchSize() {
+        brushSizeNow = brushSizeOutlet.value
+    }
     
     
     
@@ -153,8 +169,10 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     
     
     func showButt()  {
+        hideMessageToUser = true
         showHiddenRestart = true
         restartOutlit.isHidden = false
+        messageToUser.isHidden = true
     }
     
     

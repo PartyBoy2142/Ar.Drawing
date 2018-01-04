@@ -90,6 +90,27 @@
                                     <action selector="changeGreen:" destination="BV1-FR-VrT" eventType="valueChanged" id="ktL-t1-HcO"/>
                                 </connections>
                             </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.02" minValue="0.002" maxValue="0.050000000000000003" translatesAutoresizingMaskIntoConstraints="NO" id="9t8-97-OED">
+                                <rect key="frame" x="16" y="104" width="118" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="brushCahnger:" destination="BV1-FR-VrT" eventType="valueChanged" id="EnN-r5-5g9"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Brush size" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UcZ-TC-qau">
+                                <rect key="frame" x="18" y="75" width="231" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hold Draw to make Art!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i59-xT-zsN">
+                                <rect key="frame" x="16" y="505" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -115,10 +136,13 @@
                         <viewLayoutGuide key="safeArea" id="b0f-aJ-ggc"/>
                     </view>
                     <connections>
+                        <outlet property="brushSize" destination="UcZ-TC-qau" id="WSO-bR-Isc"/>
+                        <outlet property="brushSizeOutlet" destination="9t8-97-OED" id="ehK-xA-6EP"/>
                         <outlet property="colorChangerBlue" destination="V3u-MR-BdN" id="ilH-EX-FVs"/>
                         <outlet property="colorChangerGreen" destination="BWc-oR-TdO" id="eEg-Wz-5ax"/>
                         <outlet property="colorChangerRed" destination="eRE-G0-cZ0" id="Nau-l9-rex"/>
                         <outlet property="drawButton" destination="pPJ-s3-Bt4" id="Zjh-dI-K2J"/>
+                        <outlet property="messageToUser" destination="i59-xT-zsN" id="lne-da-PbX"/>
                         <outlet property="restartOutlit" destination="R92-ic-ryr" id="4hM-5g-yWx"/>
                         <outlet property="sceneView" destination="DSs-mq-6OJ" id="6YE-g7-7sG"/>
                     </connections>
